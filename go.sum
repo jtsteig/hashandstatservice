@@ -2,5 +2,7 @@ github.com/jtsteig/encodedhash v0.0.0-20191218003743-0694a0aac504 h1:9rTAfA5W8rT
 github.com/jtsteig/encodedhash v0.0.0-20191218003743-0694a0aac504/go.mod h1:2k+MryAyw7xm9VhZ/Y1Dl+h/Cnr6Lmc4dLYcTMWRkV0=
 github.com/jtsteig/hashmodels v0.0.0-20191218010601-4e3ba86b5e21 h1:jkPMMXP45IbjLuMsaRhtlkHMjyPvOFQbdVtE9AwGOog=
 github.com/jtsteig/hashmodels v0.0.0-20191218010601-4e3ba86b5e21/go.mod h1:D1tJprwwYrKE9vx+7pD4s2M6nDRmpukeVeRoabE/N0E=
+github.com/jtsteig/hashmodels v0.0.0-20191218041734-d799955d3f5f h1:RsQxiPDdDwQT9piAIvE3V937NVs4goo/iYc9IIZhJSs=
+github.com/jtsteig/hashmodels v0.0.0-20191218041734-d799955d3f5f/go.mod h1:D1tJprwwYrKE9vx+7pD4s2M6nDRmpukeVeRoabE/N0E=
 github.com/mattn/go-sqlite3 v2.0.2+incompatible h1:qzw9c2GNT8UFrgWNDhCTqRqYUSmu/Dav/9Z58LGpk7U=
 github.com/mattn/go-sqlite3 v2.0.2+incompatible/go.mod h1:FPy6KqzDD04eiIsT53CuJW3U88zkxoIYsOqkbpncsNc=

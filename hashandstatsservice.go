@@ -10,20 +10,29 @@ type HashStatsService struct {
 	HashRepository *hashmodel.HashRepository
 }
 
-// StoreValue takes a plain string value, calculates the hash and stores it and the elapsed time to persistence.
-func (service *HashStatsService) StoreValue(value string) (int, error) {
-	hash, duration := encodedhash.CalculateHash(value)
-
-	countID, err := service.HashRepository.StoreHash(hash, duration.Milliseconds())
+// CreateEmptyHashEntry creates an empty row for later updating with a hash value and time.
+func (service *HashStatsService) CreateEmptyHashEntry() (int64, error) {
+	countID, err := service.HashRepository.CreateEmptyHashEntry()
 	if err != nil {
 		return -1, err
 	}
-
 	return countID, nil
 }
 
+// StoreValue takes a plain string value, calculates the hash and stores it and the elapsed time to persistence.
+func (service *HashStatsService) StoreValue(countID int64, value string) error {
+	hash, duration := encodedhash.CalculateHash(value)
+
+	err := service.HashRepository.UpdateHashWithValues(countID, hash, duration.Microseconds())
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // GetHash returns the HashStats for a countID or an error if not found.
-func (service *HashStatsService) GetHash(countID int) (hashmodel.HashStat, error) {
+func (service *HashStatsService) GetHash(countID int64) (hashmodel.HashStat, error) {
 	hashStat, err := service.HashRepository.GetHashStat(countID)
 	if err != nil {
 		return hashmodel.HashStat{}, err
