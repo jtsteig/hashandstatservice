@@ -39,3 +39,11 @@ func (service *HashStatsService) GetTotalStats() (hashmodel.TotalStats, error) {
 	}
 	return totalStats, err
 }
+
+// Close cleans up everything. This MUST be called to close connections.
+func (service *HashStatsService) Close() error {
+	if err := service.Close(); err != nil {
+		return err
+	}
+	return nil
+}
