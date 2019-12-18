@@ -1,4 +1,4 @@
-module github.com/jtsteig/hashcountandstatsservice
+module github.com/jtsteig/hashandstatsservice
 
 go 1.13
 
